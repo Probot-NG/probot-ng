@@ -1,10 +1,10 @@
 import { Webhooks } from "@octokit/webhooks";
 
-import { State } from "../types";
-import { getErrorHandler } from "../helpers/get-error-handler";
-import { webhookTransform } from "./octokit-webhooks-transform";
+import { State } from "../types.js";
+import { getErrorHandler } from "../helpers/get-error-handler.js";
+import { webhookTransform } from "./octokit-webhooks-transform.js";
 
-// import { Context } from "../context";
+// import { Context } from "../context.js";
 
 export function getWebhooks(state: State) {
   // TODO: This should be webhooks = new Webhooks<Context>({...}) but fails with

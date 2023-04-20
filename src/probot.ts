@@ -2,19 +2,19 @@ import {LRUCache} from "lru-cache";
 import { Logger } from "pino";
 import { EmitterWebhookEvent as WebhookEvent } from "@octokit/webhooks";
 
-import { auth } from "./auth";
-import { getLog } from "./helpers/get-log";
-import { getProbotOctokitWithDefaults } from "./octokit/get-probot-octokit-with-defaults";
-import { getWebhooks } from "./octokit/get-webhooks";
-import { ProbotOctokit } from "./octokit/probot-octokit";
-import { VERSION } from "./version";
+import { auth } from "./auth.js";
+import { getLog } from "./helpers/get-log.js";
+import { getProbotOctokitWithDefaults } from "./octokit/get-probot-octokit-with-defaults.js";
+import { getWebhooks } from "./octokit/get-webhooks.js";
+import { ProbotOctokit } from "./octokit/probot-octokit.js";
+import { VERSION } from "./version.js";
 import {
   ApplicationFunction,
   ApplicationFunctionOptions,
   Options,
   ProbotWebhooks,
   State,
-} from "./types";
+} from "./types.js";
 
 export type Constructor<T> = new (...args: any[]) => T;
 

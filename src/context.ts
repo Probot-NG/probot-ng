@@ -5,9 +5,9 @@ import merge from "deepmerge";
 
 import type { Logger } from "pino";
 
-import { ProbotOctokit } from "./octokit/probot-octokit";
-import { aliasLog } from "./helpers/alias-log";
-import { DeprecatedLogger } from "./types";
+import { ProbotOctokit } from "./octokit/probot-octokit.js";
+import { aliasLog } from "./helpers/alias-log.js";
+import { DeprecatedLogger } from "./types.js";
 import { EmitterWebhookEventName as WebhookEvents } from "@octokit/webhooks/dist-types/types";
 
 export type MergeOptions = merge.Options;

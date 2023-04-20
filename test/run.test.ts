@@ -1,4 +1,4 @@
-import path = require("path");
+import path from "path";
 
 import request from "supertest";
 import { sign } from "@octokit/webhooks-methods";

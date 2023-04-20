@@ -1,9 +1,9 @@
 import {LRUCache} from "lru-cache";
-import { ProbotOctokit } from "./probot-octokit";
+import { ProbotOctokit } from "./probot-octokit.js";
 import * as redis from "ioredis";
 
-import { getOctokitThrottleOptions } from "./get-octokit-throttle-options";
-import { aliasLog } from "../helpers/alias-log";
+import { getOctokitThrottleOptions } from "./get-octokit-throttle-options.js";
+import { aliasLog } from "../helpers/alias-log.js";
 
 import type { Logger } from "pino";
 

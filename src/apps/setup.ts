@@ -3,11 +3,11 @@ import { exec } from "child_process";
 import { Request, Response } from "express";
 import updateDotenv from "update-dotenv";
 
-import { Probot } from "../probot";
-import { ManifestCreation } from "../manifest-creation";
-import { getLoggingMiddleware } from "../server/logging-middleware";
-import { ApplicationFunctionOptions } from "../types";
-import { isProduction } from "../helpers/is-production";
+import { Probot } from "../probot.js";
+import { ManifestCreation } from "../manifest-creation.js";
+import { getLoggingMiddleware } from "../server/logging-middleware.js";
+import { ApplicationFunctionOptions } from "../types.js";
+import { isProduction } from "../helpers/is-production.js";
 
 export const setupAppFactory = (
   host: string | undefined,
