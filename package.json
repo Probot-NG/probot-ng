@@ -15,7 +15,10 @@
     "pretest": "tsc --noEmit -p test",
     "test": "jest",
     "posttest": "npm run lint",
-    "doc": "typedoc --options .typedoc.json"
+    "doc": "typedoc --options .typedoc.json",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "files": [
     "lib",
@@ -99,7 +102,8 @@
     "ts-jest": "^29.1.0",
     "tsd": "^0.28.1",
     "typedoc": "^0.24.1",
-    "typescript": "^5.0.4"
+    "typescript": "^5.0.4",
+    "vitepress": "^1.0.0-alpha.73"
   },
   "engines": {
     "node": ">=10.21"

@@ -1,9 +1,3 @@
----
-next: docs/hello-world.md
-title: Introduction
-layout: docs.liquid
----
-
 # Introduction
 
 If you've ever thought, "wouldn't it be cool if GitHub could…"; imma stop you right there. Most features can actually be added via [GitHub Apps](https://docs.github.com/apps/), which extend GitHub and can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. Apps are first class actors within GitHub.
@@ -12,7 +6,9 @@ If you've ever thought, "wouldn't it be cool if GitHub could…"; imma stop you 
 
 Probot apps are easy to write, deploy, and share. Many of the most popular Probot apps are hosted, so there's nothing for you to deploy and manage. Here are just a few examples of things that have been built with Probot:
 
-{% include "docs/examples" %}
+::: danger
+<!-- {% include "docs/examples" %} -->TODO
+:::
 
 Check out the [featured apps](https://probot.github.io/apps/) or [browse more examples on GitHub](https://github.com/search?q=topic%3Aprobot-app&type=Repositories)
 

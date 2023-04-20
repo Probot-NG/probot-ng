@@ -1,8 +1,3 @@
----
-next: docs/github-api.md
-title: Receiving webhooks
----
-
 # Receiving webhooks
 
 [GitHub webhooks](https://docs.github.com/en/free-pro-team@latest/developers/webhooks-and-events/about-webhooks) are fired for almost every significant action that users or other apps take on GitHub, whether it's pushing to code, opening or closing issues, opening or merging pull requests, or commenting on a discussion.

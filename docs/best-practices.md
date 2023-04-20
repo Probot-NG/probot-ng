@@ -1,33 +1,17 @@
----
-title: Best practices
----
-
 # Best practices
 
 First and foremost, your app must obey the [The Three Laws of Robotics](https://en.wikipedia.org/wiki/Three_Laws_of_Robotics):
 
-> 0. A robot may not harm humanity, or through inaction allow humanity to come to harm.
-> 1. A robot may not injure a human being or, through inaction, allow a human being to come to harm.
-> 2. A robot must obey the orders given it by human beings except where such orders would conflict with the First Law.
-> 3. A robot must protect its own existence as long as such protection does not conflict with the First or Second Laws.
+0. A robot may not harm humanity, or through inaction allow humanity to come to harm.
+1. A robot may not injure a human being or, through inaction, allow a human being to come to harm.
+2. A robot must obey the orders given it by human beings except where such orders would conflict with the First Law.
+3. A robot must protect its own existence as long as such protection does not conflict with the First or Second Laws.
 
 Now that we agree that nobody will get hurt, here are some tips to make your app more effective.
 
 **Contents:**
 
-<!-- toc -->
-
-- [Empathy](#empathy)
-  - [Avoid the uncanny valley](#avoid-the-uncanny-valley)
-- [Autonomy](#autonomy)
-  - [Never take bulk actions without explicit permission](#never-take-bulk-actions-without-explicit-permission)
-  - [Include "dry run" functionality](#include-dry-run-functionality)
-- [Configuration](#configuration)
-  - [Require minimal configuration](#require-minimal-configuration)
-  - [Provide full configuration](#provide-full-configuration)
-  - [Store configuration in the repository](#store-configuration-in-the-repository)
-
-<!-- tocstop -->
+[[toc]]
 
 ## Empathy
 

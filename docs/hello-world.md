@@ -1,8 +1,3 @@
----
-next: docs/development.md
-title: Hello World
----
-
 # Hello world
 
 A Probot app is just a [Node.js module](https://nodejs.org/api/modules.html) that exports a function:

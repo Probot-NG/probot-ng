@@ -1,8 +1,3 @@
----
-next: docs/http.md
-title: Deployment
----
-
 # Deployment
 
 Every app can either be deployed stand-alone, or combined with other apps in one deployment.
