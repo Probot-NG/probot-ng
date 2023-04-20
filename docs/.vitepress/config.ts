@@ -5,6 +5,10 @@ export default defineConfig({
   title: "Probot",
   description: "A framework for building GitHub apps",
   themeConfig: {
+    search: {
+      // TODO: Use Algolia?
+      provider: "local"
+    },
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
