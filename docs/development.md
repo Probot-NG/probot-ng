@@ -120,7 +120,7 @@ To run your app in development, you will need to configure a GitHub App's `APP_I
 1. You must now set `APP_ID` in your `.env` to the ID of the app you just created. The App ID can be found in on top of your apps settings page.
 1. Finally, generate and download a private key file (using the button seen in the image above), then move it to your project's directory. As long as it's in the root of your project, Probot will find it automatically regardless of the filename.
 
-For more information about these and other available keys, head over to the [environmental configuration documentation](https://probot.github.io/docs/configuration/).
+For more information about these and other available keys, head over to the [environmental configuration documentation](./configuration.md).
 
 ## Installing the app on a repository
 
