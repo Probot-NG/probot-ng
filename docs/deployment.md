@@ -229,7 +229,7 @@ Please add yours!
    post /api/github/webhooks
    ```
 
-2. Make sure to [configure your app](../confinguration) using environment variables
+2. Make sure to [configure your app](./configuration.md) using environment variables
 
 3. Create the `src/http/post-api-github-webhooks` folder with the following files
 
