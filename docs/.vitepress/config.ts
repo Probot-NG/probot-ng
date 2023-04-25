@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Probot",
   description: "A framework for building GitHub apps",
+  base: "/probot-ng",
   themeConfig: {
     search: {
       // TODO: Use Algolia?
