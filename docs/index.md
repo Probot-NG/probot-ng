@@ -7,7 +7,7 @@ hero:
   text: GitHub Apps to automate and improve your workflows
   tagline: Use pre-built apps to extend GitHub, and easily build and share your own.
   image:
-    src: ./assets/img/logo.png
+    src: /assets/img/logo.png
     alt: Probot logo
   actions:
     - theme: brand
