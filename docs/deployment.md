@@ -6,26 +6,7 @@ Every app can either be deployed stand-alone, or combined with other apps in one
 
 **Contents:**
 
-<!-- toc -->
-
-- [Register the GitHub App](#register-the-github-app)
-- [Deploy the app](#deploy-the-app)
-  - [As node app](#as-node-app)
-    - [Glitch](#glitch)
-    - [Heroku](#heroku)
-  - [As serverless function](#as-serverless-function)
-    - [AWS Lambda](#aws-lambda)
-    - [Azure Functions](#azure-functions)
-    - [Google Cloud Functions](#google-cloud-functions)
-    - [GitHub Actions](#github-actions)
-    - [Begin](#begin)
-    - [Vercel](#vercel)
-    - [Netlify Functions](#netlify-functions)
-- [Share the app](#share-the-app)
-- [Combining apps](#combining-apps)
-- [Error tracking](#error-tracking)
-
-<!-- tocstop -->
+[[toc]]
 
 ## Register the GitHub App
 
@@ -311,6 +292,12 @@ module.exports.handler = createLambdaFunction(appFn, {
   probot: createProbot(),
 });
 ```
+
+#### Deno Deploy
+
+[Deno Deploy](https://deno.com/deploy) runs functions using [Deno](https://deno.land/) instead of Node.js.
+
+Deno Deploy requires a custom wrapper package that has not been built yet. We'll update the documentation once full support for Deno has been implemented.
 
 ## Share the app
 
