@@ -6,6 +6,13 @@ export default defineConfig({
   description: "A framework for building GitHub apps",
   base: "/probot-ng",
   themeConfig: {
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/probot-ng/probot-ng' },
+    ],
+    editLink: {
+      pattern: 'https://github.com/probot-ng/probot-ng/edit/master/docs/:path',
+      text: 'Edit this page on GitHub'
+    },
     search: {
       // TODO: Use Algolia?
       provider: "local"
