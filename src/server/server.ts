@@ -50,12 +50,6 @@ export class Server {
       "/probot/static/",
       express.static(join(__dirname, "..", "..", "static"))
     );
-    this.expressApp.use(
-      this.state.webhookPath,
-      createWebhooksMiddleware(this.probotApp.webhooks, {
-        path: "/",
-      })
-    );
 
     this.expressApp.engine(
       "handlebars",
@@ -66,6 +60,12 @@ export class Server {
     this.expressApp.set("view engine", "handlebars");
     this.expressApp.set("views", join(__dirname, "..", "..", "views"));
     this.expressApp.get("/ping", (req, res) => res.end("PONG"));
+    this.expressApp.use(
+      this.state.webhookPath,
+      createWebhooksMiddleware(this.probotApp.webhooks, {
+        path: "/",
+      })
+    );
   }
 
   public async load(appFn: ApplicationFunction) {
