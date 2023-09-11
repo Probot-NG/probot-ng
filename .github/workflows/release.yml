@@ -18,7 +18,14 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+      - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
+        run: npm audit signatures
       - run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+permissions:
+  id-token: write
+  contents: write
+  
