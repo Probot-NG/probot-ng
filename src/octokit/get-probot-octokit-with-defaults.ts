@@ -1,4 +1,4 @@
-import {LRUCache} from "lru-cache";
+import { LRUCache } from "lru-cache";
 import { ProbotOctokit } from "./probot-octokit";
 import * as redis from "ioredis";
 
@@ -69,7 +69,7 @@ export function getProbotOctokitWithDefaults(options: Options) {
       options.throttle = Object.assign(
         {},
         defaultOptions.throttle,
-        instanceOptions.throttle
+        instanceOptions.throttle,
       );
     }
 

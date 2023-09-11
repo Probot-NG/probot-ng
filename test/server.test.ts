@@ -89,7 +89,7 @@ describe("Server", () => {
     server.expressApp.use(
       (error: Error, req: Request, res: Response, next: NextFunction) => {
         res.status(500).send(error.message);
-      }
+      },
     );
   });
 
@@ -151,7 +151,7 @@ describe("Server", () => {
         .set("x-github-delivery", "3sw4d5f6g7h8")
         .expect(
           400,
-          '{"error":"Required headers missing: x-hub-signature-256"}'
+          '{"error":"Required headers missing: x-hub-signature-256"}',
         );
     });
   });
@@ -181,7 +181,7 @@ describe("Server", () => {
           await server.start();
         } catch (error) {
           expect((error as Error).message).toEqual(
-            "Port 3001 is already in use. You can define the PORT environment variable to use a different port."
+            "Port 3001 is already in use. You can define the PORT environment variable to use a different port.",
           );
         }
 

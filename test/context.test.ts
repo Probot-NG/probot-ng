@@ -11,17 +11,17 @@ import { PushEvent } from "@octokit/webhooks-types";
 
 const pushEventPayload = (
   WebhookExamples.filter(
-    (event) => event.name === "push"
+    (event) => event.name === "push",
   )[0] as WebhookDefinition<"push">
 ).examples[0];
 const issuesEventPayload = (
   WebhookExamples.filter(
-    (event) => event.name === "issues"
+    (event) => event.name === "issues",
   )[0] as WebhookDefinition<"issues">
 ).examples[0];
 const pullRequestEventPayload = (
   WebhookExamples.filter(
-    (event) => event.name === "pull_request"
+    (event) => event.name === "pull_request",
   )[0] as WebhookDefinition<"pull_request">
 ).examples[0];
 
@@ -34,7 +34,7 @@ describe("Context", () => {
   let context: Context<"push"> = new Context<"push">(
     event,
     {} as any,
-    {} as any
+    {} as any,
   );
 
   it("inherits the payload", () => {
@@ -98,7 +98,7 @@ describe("Context", () => {
         context.repo();
       } catch (e) {
         expect((e as Error).message).toMatch(
-          "context.repo() is not supported for this webhook event."
+          "context.repo() is not supported for this webhook event.",
         );
       }
     });
@@ -179,7 +179,7 @@ describe("Context", () => {
           owner: "muahaha",
           pull_number: 5,
           repo: "Hello-World",
-        }
+        },
       );
     });
   });
@@ -231,16 +231,16 @@ describe("Context", () => {
         .get("/repos/Codertocat/Hello-World/contents/.github%2Ftest-file.yml")
         .reply(
           200,
-          "foo:\n  - name: master\n    shouldChange: changed\n_extends: .github"
+          "foo:\n  - name: master\n    shouldChange: changed\n_extends: .github",
         )
         .get("/repos/Codertocat/.github/contents/.github%2Ftest-file.yml")
         .reply(
           200,
-          "foo:\n  - name: develop\n  - name: master\n    shouldChange: should"
+          "foo:\n  - name: develop\n  - name: master\n    shouldChange: should",
         );
 
       const customMerge = jest.fn(
-        (_target: any[], _source: any[], _options: any): any[] => []
+        (_target: any[], _source: any[], _options: any): any[] => [],
       );
       await context.config("test-file.yml", {}, { arrayMerge: customMerge });
       expect(customMerge).toHaveBeenCalled();

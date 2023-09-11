@@ -42,7 +42,7 @@ module.exports = (app) => {
     context.octokit.issues.createComment(
       context.issue({
         body: `There were ${edits} edits to issues in this thread.`,
-      })
+      }),
     );
   });
 };

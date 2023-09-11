@@ -23,4 +23,3 @@ features:
   - title: Easily scriptable
     details: Focus on what you want to build. A simple API—built on the latest ES2022 JavaScript features—hides the details you don't care about.
 ---
-

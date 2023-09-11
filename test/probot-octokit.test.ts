@@ -92,7 +92,7 @@ describe("ProbotOctokit", () => {
             "X-RateLimit-Limit": "60",
             "X-RateLimit-Remaining": "0",
             "X-RateLimit-Reset": `${new Date().getTime() / 1000}`,
-          }
+          },
         )
 
         .get("/")
@@ -157,7 +157,7 @@ describe("ProbotOctokit", () => {
           repo: "pizza",
           per_page: 1,
         }),
-        spy
+        spy,
       );
       expect(Array.isArray(res)).toBeTruthy();
       expect(res.length).toBe(5);
@@ -174,7 +174,7 @@ describe("ProbotOctokit", () => {
           repo: "pizza",
           per_page: 1,
         }),
-        spy
+        spy,
       );
       expect(res.length).toBe(3);
       expect(spy).toHaveBeenCalledTimes(3);
@@ -186,7 +186,7 @@ describe("ProbotOctokit", () => {
           owner: "JasonEtco",
           repo: "pizza",
           per_page: 1,
-        })
+        }),
       );
       expect(res).toEqual(issues);
     });

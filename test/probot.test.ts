@@ -67,13 +67,13 @@ wB98bfAGtcuCZWzgjgL67CS0pcNxadFA/TFo/NnynLBC4qRXSfFslKVE+Og=
 -----END RSA PRIVATE KEY-----`;
 
 const getPayloadExamples = <TName extends EmitterWebhookEventName>(
-  name: TName
+  name: TName,
 ) => {
   return webhookExamples.filter((event) => event.name === name.split(".")[0])[0]
     .examples as EmitterWebhookEvent<TName>["payload"][];
 };
 const getPayloadExample = <TName extends EmitterWebhookEventName>(
-  name: TName
+  name: TName,
 ) => {
   const examples = getPayloadExamples<TName>(name);
   if (name.includes(".")) {
@@ -126,7 +126,7 @@ describe("Probot", () => {
   describe("constructor", () => {
     it("no options", () => {
       expect(() => new Probot()).toThrow(
-        "[@octokit/auth-app] appId option is required"
+        "[@octokit/auth-app] appId option is required",
       );
     });
 
@@ -184,7 +184,7 @@ describe("Probot", () => {
         await probot.webhooks.receive(event);
       } catch (e) {
         expect(
-          (probot.log.error as jest.Mock).mock.calls[0][1]
+          (probot.log.error as jest.Mock).mock.calls[0][1],
         ).toMatchSnapshot();
       }
     });
@@ -201,7 +201,7 @@ describe("Probot", () => {
         await probot.webhooks.receive(event);
       } catch (e) {
         expect(
-          (probot.log.error as jest.Mock).mock.calls[0][1]
+          (probot.log.error as jest.Mock).mock.calls[0][1],
         ).toMatchSnapshot();
       }
     });
@@ -212,7 +212,7 @@ describe("Probot", () => {
       probot.log.error = jest.fn();
       probot.webhooks.on("push", () => {
         throw Error(
-          "webhooks:receiver ignored: POST / due to missing headers: x-hub-signature-256"
+          "webhooks:receiver ignored: POST / due to missing headers: x-hub-signature-256",
         );
       });
 
@@ -220,7 +220,7 @@ describe("Probot", () => {
         await probot.webhooks.receive(event);
       } catch (e) {
         expect(
-          (probot.log.error as jest.Mock).mock.calls[0][1]
+          (probot.log.error as jest.Mock).mock.calls[0][1],
         ).toMatchSnapshot();
       }
     });
@@ -231,7 +231,7 @@ describe("Probot", () => {
       probot.log.error = jest.fn();
       probot.webhooks.onAny(() => {
         throw new Error(
-          "error:0906D06C:PEM routines:PEM_read_bio:no start line"
+          "error:0906D06C:PEM routines:PEM_read_bio:no start line",
         );
       });
 
@@ -239,7 +239,7 @@ describe("Probot", () => {
         await probot.webhooks.receive(event);
       } catch (e) {
         expect(
-          (probot.log.error as jest.Mock).mock.calls[0][1]
+          (probot.log.error as jest.Mock).mock.calls[0][1],
         ).toMatchSnapshot();
       }
     });
@@ -250,7 +250,7 @@ describe("Probot", () => {
       probot.log.error = jest.fn();
       probot.webhooks.onAny(() => {
         throw new Error(
-          '{"message":"A JSON web token could not be decoded","documentation_url":"https://developer.github.com/v3"}'
+          '{"message":"A JSON web token could not be decoded","documentation_url":"https://developer.github.com/v3"}',
         );
       });
 
@@ -258,7 +258,7 @@ describe("Probot", () => {
         await probot.webhooks.receive(event);
       } catch (e) {
         expect(
-          (probot.log.error as jest.Mock).mock.calls[0][1]
+          (probot.log.error as jest.Mock).mock.calls[0][1],
         ).toMatchSnapshot();
       }
     });
@@ -269,7 +269,7 @@ describe("Probot", () => {
       const appFn = async (app: Probot) => {
         const octokit = await app.auth();
         expect(octokit.request.endpoint.DEFAULTS.baseUrl).toEqual(
-          "https://notreallygithub.com/api/v3"
+          "https://notreallygithub.com/api/v3",
         );
       };
 
@@ -284,7 +284,7 @@ describe("Probot", () => {
       const appFn = async (app: Probot) => {
         const octokit = await app.auth();
         expect(octokit.request.endpoint.DEFAULTS.baseUrl).toEqual(
-          "https://notreallygithub.com/api/v3"
+          "https://notreallygithub.com/api/v3",
         );
       };
 
@@ -303,7 +303,7 @@ describe("Probot", () => {
       const appFn = async (app: Probot) => {
         const octokit = await app.auth();
         expect(octokit.request.endpoint.DEFAULTS.baseUrl).toEqual(
-          "http://notreallygithub.com/api/v3"
+          "http://notreallygithub.com/api/v3",
         );
       };
 
@@ -325,7 +325,7 @@ describe("Probot", () => {
         Octokit: ProbotOctokit.plugin((octokit, options) => {
           expect(options.throttle?.Bottleneck).toBe(Bottleneck);
           expect(options.throttle?.connection).toBeInstanceOf(
-            Bottleneck.IORedisConnection
+            Bottleneck.IORedisConnection,
           );
         }),
       });
@@ -345,7 +345,7 @@ describe("Probot", () => {
         Octokit: ProbotOctokit.plugin((octokit, options) => {
           expect(options.throttle?.Bottleneck).toBe(Bottleneck);
           expect(options.throttle?.connection).toBeInstanceOf(
-            Bottleneck.IORedisConnection
+            Bottleneck.IORedisConnection,
           );
         }),
       });
@@ -463,7 +463,7 @@ describe("Probot", () => {
           expect.objectContaining({
             id: context.id,
             msg: "testing",
-          })
+          }),
         );
       });
 
@@ -544,7 +544,7 @@ describe("Probot", () => {
         id: "123-456",
         name: "check_run",
         payload: getPayloadExamples("check_run").filter(
-          (event) => typeof event.installation === "undefined"
+          (event) => typeof event.installation === "undefined",
         )[0],
       };
 

@@ -3,7 +3,7 @@ import {
   EmitterWebhookEvent as WebhookEvent,
   Webhooks,
 } from "@octokit/webhooks";
-import {LRUCache} from "lru-cache";
+import { LRUCache } from "lru-cache";
 import * as Redis from "ioredis";
 import { Options as LoggingOptions } from "pino-http";
 
@@ -54,7 +54,7 @@ export type ApplicationFunctionOptions = {
 };
 export type ApplicationFunction = (
   app: Probot,
-  options: ApplicationFunctionOptions
+  options: ApplicationFunctionOptions,
 ) => void;
 
 export type ServerOptions = {
