@@ -36,7 +36,14 @@ export async function getAuthenticatedOctokit(
         },
         throttle: {
           ...octokitOptions.throttle,
-          id: installationId,
+          id: installationId.toString(),
+          enabled: true,
+          onRateLimit: () => {
+            return true;
+          },
+          onSecondaryRateLimit: () => {
+            return true;
+          }
         },
         auth: {
           ...octokitOptions.auth,
