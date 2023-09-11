@@ -50,6 +50,10 @@ export default defineConfig({
           { text: "Persistence", link:  "/persistence" },
           { text: "Best practices", link:  "/best-practices" },
         ],
+      },
+      {
+        text: "Upgrading from Probot",
+        link: "/upgrading"
       }
     ],
   }
