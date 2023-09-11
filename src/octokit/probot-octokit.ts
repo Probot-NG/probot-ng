@@ -6,7 +6,7 @@ import { legacyRestEndpointMethods } from "@octokit/plugin-rest-endpoint-methods
 import { retry } from "@octokit/plugin-retry";
 import { throttling } from "@octokit/plugin-throttling";
 import { config } from "@probot/octokit-plugin-config";
-import { createProbotAuth } from "octokit-auth-probot";
+import { createProbotAuth } from "@probot-ng/octokit-auth-probot-ng";
 
 import { probotRequestLogging } from "./octokit-plugin-probot-request-logging";
 import { VERSION } from "../version";
