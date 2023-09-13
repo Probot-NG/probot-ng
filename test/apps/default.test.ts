@@ -44,7 +44,7 @@ describe("default app", () => {
         const actual = await request(server.expressApp)
           .get("/probot")
           .expect(200);
-        expect(actual.text).toMatch("Welcome to probot");
+        expect(actual.text).toMatch("Welcome to @probot-ng/core");
         expect(actual.text).toMatch("A framework for building GitHub Apps");
         expect(actual.text).toMatch(/v\d+\.\d+\.\d+/);
       });
