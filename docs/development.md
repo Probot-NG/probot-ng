@@ -204,7 +204,7 @@ const app = require("./index.js");
 module.exports = createNodeMiddleware(app, { probot: createProbot() });
 ```
 
-By default, `createNodeMiddleware()` uses `/` as the webhook endpoint. To customize this behaviour, you can use the `webhooksPath` option.
+By default, `createNodeMiddleware()` uses `/webhooks` as the webhook endpoint. To customize this behaviour, you can use the `webhooksPath` option.
 
 ```js
 module.exports = createNodeMiddleware(app, {

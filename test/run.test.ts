@@ -102,13 +102,13 @@ describe("run", () => {
   describe("webhooks", () => {
     const pushEvent = require("./fixtures/webhook/push.json");
 
-    it("POST /", async () => {
+    it("POST /webhooks", async () => {
       server = await run(() => {}, { env });
 
       const dataString = JSON.stringify(pushEvent);
 
       await request(server.expressApp)
-        .post("/")
+        .post("/webhooks")
         .send(dataString)
         .set("content-type", "application/json")
         .set("x-github-event", "push")

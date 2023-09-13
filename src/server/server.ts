@@ -41,7 +41,7 @@ export class Server {
     this.state = {
       port: options.port,
       host: options.host,
-      webhookPath: options.webhookPath || "/",
+      webhookPath: options.webhookPath || "/webhooks",
       webhookProxy: options.webhookProxy,
     };
 
@@ -63,7 +63,7 @@ export class Server {
     this.expressApp.use(
       this.state.webhookPath,
       createWebhooksMiddleware(this.probotApp.webhooks, {
-        path: "/",
+        path: "/webhooks",
       }),
     );
   }
