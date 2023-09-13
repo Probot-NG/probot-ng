@@ -73,7 +73,7 @@
     "@octokit/webhooks-examples": "^7.2.0",
     "@octokit/webhooks-methods": "^4.0.0",
     "@octokit/webhooks-types": "^7.2.0",
-    "@probot-ng/octokit-auth-probot-ng": "^1.2.11",
+    "@probot-ng/octokit-auth-probot-ng": "^1.2.13",
     "@tsconfig/node16": "^16.1.1",
     "@types/eventsource": "^1.1.11",
     "@types/jest": "^29.5.4",
